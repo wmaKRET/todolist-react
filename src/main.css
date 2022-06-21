@@ -4,7 +4,6 @@
 }
 
 body {
-  height: 100vh;
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -13,14 +12,20 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   font-family: 'Times New Roman', Times, serif;
 }
 
+.action-failure {
+  color: red;
+}
+.action-success {
+  color: greenyellow;
+}
+
 .container {
+  height: 90vh;
   max-width: 600px;
+  margin-top: 4em;
   padding: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -165,5 +170,9 @@ body {
           transform-origin: center;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.list__task-isdone {
+  color: red;
 }
 /*# sourceMappingURL=main.css.map */
