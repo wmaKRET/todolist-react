@@ -5,6 +5,11 @@ import List from "./List"
 
 function App() {
   const [tasks, setTasks] = React.useState([])
+  const [tasksLeft, setTasksLeft] = React.useState(0)
+
+  React.useEffect(() => {
+    setTasksLeft(tasks.filter(task => !task.isCompleted).length)
+  }, [tasks])
 
   function createTask(inputValue){
     return {
@@ -71,7 +76,7 @@ function App() {
   return (
     <div className="container">
       <Menu 
-        tasksRemaining={tasks.length}
+        tasksRemaining={tasksLeft}
         addTask={addTask}
         clearCompleted={clearCompleted}
         deleteAll={deleteAll}
