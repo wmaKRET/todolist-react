@@ -38,6 +38,11 @@ function App() {
       displayMessage('Please enter any value.', 'action-failure')
       return
     }
+    if (inputText.value.length > 60) {
+      displayMessage('The task is too long! (Max 60 letters)', 'action-failure')
+      setTimeout(() => inputText.value = '', 0)
+      return
+    }
     setTasks(prevTasks => [...prevTasks, createTask(inputText.value)])
     displayMessage('Task added!', 'action-success')
     setTimeout(() => inputText.value = '', 0)
