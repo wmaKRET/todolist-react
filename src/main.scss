@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.container {
+    max-width: 600px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    background-color: #141e7a;
+    color: white;
+    border-radius: 20px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__btn {
+        margin: 0.5em 0;
+        padding: 1em;
+        width: 100%;
+        background-color: #3243e0;
+        color: white;
+        border: none;
+        box-shadow: 0px 0px 10px 0px #0c124b;
+        border-radius: 10px;
+        font-weight: 700;
+        cursor: pointer;
+
+        transition: all 0.2s ease-in;
+        &:hover {
+            background-color: #7e87df;
+            box-shadow: 0px 0px 10px 0px #7e87df;
+        }
+    }
+
+    &__msg {
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
+
+    &__input {
+        height: 3em;
+        min-width: 500px;
+        background-color: #0c124b;
+        color: white;
+        border: none;
+        box-shadow: 0px 0px 10px 0px #0c124b;
+        border-radius: 5px;
+        font-weight: 700;
+
+        transition: all 0.1s ease-in;
+        &:focus {
+            box-shadow: 0px 0px 10px 0px #7e87df;
+        }
+    }
+
+    &__counter {
+        height: 3em;
+        width: 100%;
+        margin: 0.5em 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #7e87df;
+        border: 2px solid #0c124b;
+        box-shadow: 0px 0px 10px 0px #0c124b;
+        border-radius: 5px;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+
+    &__task {
+        margin: 0.5em 0;
+        padding: 0 0.5em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        border: 2px solid #7e87df;
+        box-shadow: 0px 0px 10px 0px #7e87df;
+        border-radius: 5px;
+
+        &-delete-btn {
+            cursor: pointer;
+
+            &>span {
+                display: block;
+                height: 3px;
+                width: 20px;       
+                background-color: #7e87df;  
+
+                &:nth-child(1){
+                    transform-origin: center;
+                    transform: translateY(3px) rotate(45deg);
+                }
+                &:nth-child(2){
+                    transform-origin: center;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
