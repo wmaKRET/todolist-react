@@ -7,6 +7,7 @@ export default function List(props) {
             key={task.id}
             value={task.value}
             isCompleted={task.isCompleted}
+            completeTask={() => props.completeTask(task.id)}
             deleteTask={() => props.deleteTask(task.id)}
         />
     ))

@@ -7,10 +7,16 @@ export default function Task(props) {
                         ? "list__task list__task-isdone"
                         : "list__task"
                     }
-            onClick={props.deleteTask}
+            onClick={props.completeTask}
         >
             <p>{props.value}</p>
-            <div className="list__task-delete-btn">
+            <div 
+                className={props.isCompleted
+                    ? "list__task-delete-btn list__task-delete-btn-isdone"
+                    : "list__task-delete-btn"
+                }
+                onClick={props.deleteTask}
+            >
                 <span></span>
                 <span></span>
             </div>

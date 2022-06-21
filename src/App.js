@@ -62,6 +62,14 @@ function App() {
     setTasks(prevTasks => prevTasks.filter(task => task.id !== id))
   }
 
+  function completeTask(id){
+    setTasks(prevTasks => prevTasks.map(task => {
+      return task.id === id
+          ? {...task, isCompleted: !task.isCompleted}
+          : task
+    }))
+  }
+
   return (
     <div className="container">
       <Menu 
@@ -73,6 +81,7 @@ function App() {
       <List 
         tasks={tasks}
         deleteTask={deleteTask}
+        completeTask={completeTask}
       />
     </div>
   )

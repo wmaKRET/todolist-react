@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -15,15 +16,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
 }
 
-.action-failure {
-  color: red;
-}
-.action-success {
-  color: greenyellow;
-}
-
 .container {
-  height: 90vh;
   max-width: 600px;
   margin-top: 4em;
   padding: 2em;
@@ -129,14 +122,12 @@ body {
 }
 
 .list__task {
+  position: relative;
   margin: 0.5em 0;
   padding: 0 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -145,9 +136,18 @@ body {
   -webkit-box-shadow: 0px 0px 10px 0px #7e87df;
           box-shadow: 0px 0px 10px 0px #7e87df;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.list__task > p {
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
 .list__task-delete-btn {
+  position: absolute;
+  right: 1em;
   cursor: pointer;
 }
 
@@ -172,7 +172,31 @@ body {
           transform: rotate(-45deg);
 }
 
+.list__task-delete-btn-isdone > span {
+  background-color: #141e7a;
+}
+
 .list__task-isdone {
-  color: red;
+  background-color: #0c124b;
+  -webkit-box-shadow: 0px 0px 10px 0px #0c124b;
+          box-shadow: 0px 0px 10px 0px #0c124b;
+  color: #141e7a;
+  border: 2px solid #141e7a;
+}
+
+.list__task-isdone::before {
+  padding-right: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  content: '✔';
+}
+
+.action-failure {
+  color: #ff0000;
+}
+
+.action-success {
+  color: #2bff00;
 }
 /*# sourceMappingURL=main.css.map */

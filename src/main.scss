@@ -39,6 +39,7 @@ body {
         cursor: pointer;
 
         transition: all 0.2s ease-in;
+
         &:hover {
             background-color: #7e87df;
             box-shadow: 0px 0px 10px 0px #7e87df;
@@ -61,6 +62,7 @@ body {
         font-weight: 700;
 
         transition: all 0.1s ease-in;
+
         &:focus {
             box-shadow: 0px 0px 10px 0px #7e87df;
         }
@@ -85,38 +87,68 @@ body {
     flex-direction: column;
 
     &__task {
+        position: relative;
         margin: 0.5em 0;
         padding: 0 0.5em;
         display: flex;
-        justify-content: space-between;
         align-items: center;
         color: white;
         border: 2px solid #7e87df;
         box-shadow: 0px 0px 10px 0px #7e87df;
         border-radius: 5px;
+        cursor: pointer;
+
+        & > p {
+            justify-content: left;
+        }
 
         &-delete-btn {
+            position: absolute;
+            right: 1em;
             cursor: pointer;
 
             &>span {
                 display: block;
                 height: 3px;
-                width: 20px;       
-                background-color: #7e87df;  
+                width: 20px;
+                background-color: #7e87df;
 
-                &:nth-child(1){
+                &:nth-child(1) {
                     transform-origin: center;
                     transform: translateY(3px) rotate(45deg);
                 }
-                &:nth-child(2){
+
+                &:nth-child(2) {
                     transform-origin: center;
                     transform: rotate(-45deg);
                 }
             }
+
+            
+            &-isdone > span{
+                background-color: #141e7a;
+            }
         }
 
         &-isdone {
-            color: red;
+            background-color: #0c124b;
+            box-shadow: 0px 0px 10px 0px #0c124b;
+            color: #141e7a;
+            border: 2px solid #141e7a;
+
+            &::before{
+                padding-right: 0.5em;
+                display: flex;
+                content: '✔';
+            }
         }
     }
+}
+
+.action-failure {
+    color: #ff0000;
+}
+
+.action-success {
+    color: #2bff00;
 }
