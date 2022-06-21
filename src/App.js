@@ -4,12 +4,19 @@ import Menu from "./Menu"
 import List from "./List"
 
 function App() {
-  const [tasks, setTasks] = React.useState([])
+  const [tasks, setTasks] = React.useState(getLocalStorageTasks())
   const [tasksLeft, setTasksLeft] = React.useState(0)
 
   React.useEffect(() => {
     setTasksLeft(tasks.filter(task => !task.isCompleted).length)
+    localStorage.setItem('todolist-react', JSON.stringify(tasks))
   }, [tasks])
+
+  function getLocalStorageTasks(){
+    return localStorage.getItem('todolist-react')
+        ? JSON.parse(localStorage.getItem('todolist-react'))
+        : []
+  }
 
   function createTask(inputValue){
     return {
